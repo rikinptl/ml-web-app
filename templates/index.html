@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iris Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 Iris Flower Predictor</h1>
+    <form action="/predict" method="post">
+      <input type="text" name="sepal_length" placeholder="Sepal Length">
+      <input type="text" name="sepal_width" placeholder="Sepal Width">
+      <input type="text" name="petal_length" placeholder="Petal Length">
+      <input type="text" name="petal_width" placeholder="Petal Width">
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+  </div>
+</body>
+</html>
